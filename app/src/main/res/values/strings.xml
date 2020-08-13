@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name" translatable="false">المحراب</string>
+
+    <string name="find_my_location_and_start">ابحث عن موقعي</string>
+    <string name="permission_required"> العثور على موقعك الشخصي مطلوب!</string>
+    <string name="permission_required_reason"> العثور على موقعك الشخصي مطلوب لتحديد بدقة مواقيت الصلاة والقبلة وأقرب المساجد المحيطة بك، من فضلك وافق على سماحية العثور على موقعك لكي تتمكن من استخدام التطبيق.</string>
+
+    <string name="title_main">الرئيسية</string>
+    <string name="find_nearby_mosques">ابحث عن أقرب مساجد</string>
+    <string name="title_qibla">القبلة</string>
+    <string name="title_near_mosques">أقرب المساجد</string>
+    <string name="title_azkar">الأذكار</string>
+    <string name="title_awl_mara_asaly">أول مرة أصلي</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="cairo">القاهرة</string>
+    <string name="ok">موافق</string>
+</resources>

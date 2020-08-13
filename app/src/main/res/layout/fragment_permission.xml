@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layoutDirection="rtl"
+        android:padding="20dp"
+        tools:context=".ui.permission.PermissionsFragment"
+        android:background="#FFF">
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/attention"
+            android:text="@string/permission_required"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textDirection="rtl" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView"
+            android:layout_marginTop="10dp"
+            android:text="@string/permission_required_reason"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textDirection="rtl"
+            />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            android:text="@string/ok"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:background="#FFF"
+            android:padding="10dp" />
+    </RelativeLayout>
+</layout>

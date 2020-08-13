@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1032135582649",
+    "firebase_url": "https://mihrabi.firebaseio.com",
+    "project_id": "mihrabi",
+    "storage_bucket": "mihrabi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1032135582649:android:6d450b391bb4c07371cc68",
+        "android_client_info": {
+          "package_name": "com.devm7mdibrahim.mihrabi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1032135582649-erq3s92j70vk4bgqnv5lg0toc58mtsci.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.devm7mdibrahim.mihrabi",
+            "certificate_hash": "7a6d68574ae7a26f68e5cfe0836ef610b7db3456"
+          }
+        },
+        {
+          "client_id": "1032135582649-5damr51pif2a8q6n1ui50c1gjindn710.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAxCQrFJGZn5kF_hJ8BMSzxb-quJS1TU2k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1032135582649-5damr51pif2a8q6n1ui50c1gjindn710.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

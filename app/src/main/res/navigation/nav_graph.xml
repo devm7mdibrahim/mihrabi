@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/splash_fragment">
+
+    <fragment
+        android:id="@+id/splash_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.splash.SplashFragment"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/action_splashFragment_to_permissionFragment"
+            app:destination="@id/permission_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+
+        <action
+            android:id="@+id/action_splashFragment_to_mainFragment"
+            app:destination="@id/main_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splash_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/permission_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.permission.PermissionsFragment"
+        tools:layout="@layout/fragment_permission">
+        <action
+            android:id="@+id/action_permissionFragment_to_mainFragment"
+            app:destination="@id/main_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/permission_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.main.fragment.MainFragment"
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/action_mainFragment_to_awlMaraAsalyFragment"
+            app:destination="@id/awl_mara_asaly_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_nearMosquesFragment"
+            app:destination="@id/mosques_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_qiblaFragment"
+            app:destination="@id/qibla_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_fiqhFragment"
+            app:destination="@id/fiqh_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_imaniatFragment"
+            app:destination="@id/imaniat_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_misbahaFragment"
+            app:destination="@id/misbaha_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_prayerTimesFragment"
+            app:destination="@id/prayerTimes_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_qadaaFragment"
+            app:destination="@id/qadaa_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_surahListFragment"
+            app:destination="@id/surah_list_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+
+        <action
+            android:id="@+id/action_mainFragment_to_azkarFragment"
+            app:destination="@id/azkar_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_main_fragment_to_fadlElsalahFragment"
+            app:destination="@id/fadlElsalahFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/qibla_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.qibla.fragment.QiblaFragment"
+        tools:layout="@layout/fragment_qibla" />
+
+    <fragment
+        android:id="@+id/fiqh_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.fiqh.fragment.FiqhFragment"
+        tools:layout="@layout/fragment_fiqh">
+        <argument
+            android:name="fiqh_type"
+            android:defaultValue="1" />
+        <argument android:name="fiqh_name"
+            android:defaultValue="فقه الصلاة"/>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/quran_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.quran.quran.fragment.QuranFragment"
+        tools:layout="@layout/fragment_quran">
+        <argument
+            android:name="surah_number"
+            android:defaultValue="1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/surah_list_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.quran.surahList.fragment.SurahListFragment"
+        tools:layout="@layout/fragment_surah_list">
+        <action
+            android:id="@+id/action_SurahListFragment_to_QuranFragment"
+            app:destination="@id/quran_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/imaniat_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.imaniat.ImaniatFragment"
+        tools:layout="@layout/fragment_imaniat" />
+
+    <fragment
+        android:id="@+id/misbaha_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.misbaha.fragment.MisbahaFragment"
+        tools:layout="@layout/fragment_misbaha" />
+
+    <fragment
+        android:id="@+id/prayerTimes_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.prayer_times.fragment.PrayerTimesFragment"
+        tools:layout="@layout/fragment_prayer_times" />
+
+    <fragment
+        android:id="@+id/qadaa_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.qadaa.fragment.QadaaFragment"
+        tools:layout="@layout/fragment_qadaa" />
+
+    <fragment
+        android:id="@+id/mosques_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.mosques.fragment.MosquesFragment"
+        tools:layout="@layout/fragment_mosques" />
+
+    <fragment
+        android:id="@+id/azkar_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.azkar.all.fragment.AzkarFragment"
+        tools:layout="@layout/fragment_azkar">
+        <action
+            android:id="@+id/action_azkarFragment_to_azkarDetailFragment"
+            app:destination="@id/azkar_detail_fragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/azkar_detail_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.azkar.detail.fragment.AzkarDetailsFragment"
+        tools:layout="@layout/fragment_azkar_details">
+        <argument
+            android:name="azkar_type"
+            android:defaultValue="1" />
+
+        <argument
+            android:name="azkar_name"
+            android:defaultValue="أذكار الصباح"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/awl_mara_asaly_fragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.awl_mara_asaly.AwlMaraAsalyFragment"
+        tools:layout="@layout/fragment_awl_mara_asaly" />
+
+    <fragment
+        android:id="@+id/fadlElsalahFragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.fadl_elsalah.fragments.FadlElsalahFragment"
+        android:label="fragment_fadl_elsalah"
+        tools:layout="@layout/fragment_fadl_elsalah">
+        <action
+            android:id="@+id/action_fadlElsalahFragment_to_fadlElsalahDetailFragment"
+            app:destination="@id/fadlElsalahDetailFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/fadlElsalahDetailFragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.fadl_elsalah.fragments.FadlElsalahDetailFragment"
+        android:label="fragment_fadl_elsalah_detail"
+        tools:layout="@layout/fragment_fadl_elsalah_detail">
+        <argument
+            android:name="fadl_type"
+            android:defaultValue="1" />
+        <argument android:name="fadl_name"
+            android:defaultValue="صلاة الجماعة"/>
+    </fragment>
+
+</navigation>

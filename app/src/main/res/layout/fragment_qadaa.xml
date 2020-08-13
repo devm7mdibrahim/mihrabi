@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:layoutDirection="rtl"
+        android:orientation="vertical"
+        tools:ignore="Autofill,LabelFor, ContentDescription, HardcodedText, UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageButton
+                android:id="@+id/back_img_btn"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/back_icon"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="قضاء الصلاة"
+                android:textColor="#000"
+                android:textSize="22sp"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+            <Button
+                android:id="@+id/minus1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus1"
+                android:layout_alignBottom="@+id/minus1"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus1"
+                android:layout_toEndOf="@+id/plus1"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="الفجر"
+                android:id="@+id/text1"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+
+            <Button
+                android:id="@+id/minus2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus2"
+                android:layout_alignBottom="@+id/minus2"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus2"
+                android:layout_toEndOf="@+id/plus2"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="الظهر"
+                android:id="@+id/text2"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+
+            <Button
+                android:id="@+id/minus3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus3"
+                android:layout_alignBottom="@+id/minus3"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus3"
+                android:layout_toEndOf="@+id/plus3"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="العصر"
+                android:id="@+id/text3"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+
+            <Button
+                android:id="@+id/minus4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus4"
+                android:layout_alignBottom="@+id/minus4"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus4"
+                android:layout_toEndOf="@+id/plus4"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="المغرب"
+                android:id="@+id/text4"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+            <Button
+                android:id="@+id/minus5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus5"
+                android:layout_alignBottom="@+id/minus5"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus5"
+                android:layout_toEndOf="@+id/plus5"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="العشاء"
+                android:id="@+id/text5"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="2dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp">
+
+            <Button
+                android:id="@+id/minus6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/minus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <Button
+                android:id="@+id/plus6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/plus"
+                android:backgroundTint="@color/colorPrimary" />
+
+            <EditText
+                android:id="@+id/qadaa_et6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/minus6"
+                android:layout_alignBottom="@+id/minus6"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_toStartOf="@+id/minus6"
+                android:layout_toEndOf="@+id/plus6"
+                android:ems="10"
+                android:gravity="center"
+                android:inputType="number"
+                android:text="0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="الصيام"
+                android:id="@+id/text6"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>
