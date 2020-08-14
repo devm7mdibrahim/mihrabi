@@ -8,24 +8,25 @@ data class Page(var ayat: List<Ayah>, var pageNumber: Int = 0, var juz: Int = 0)
 
     fun getText(a: (x: Int) -> String): String {
         val builder = StringBuilder()
-        var ayah: String
-        var tempSuraName: String
         var isFirst = true
 
         ayat.let {
             for (ayahItem in it) {
-                ayah = ayahItem.text
+                var ayah = ayahItem.text
                 if (ayahItem.ayahIdInSurah == 1) {
-                    tempSuraName = a(ayahItem.surahId)
+                    val tempSuraName = a(ayahItem.surahId)
                     if (isFirst) {
                         builder.append(tempSuraName + "\n")
                     } else {
                         builder.append("\n" + tempSuraName + "\n")
                     }
 
-                    if (ayahItem.surahId != 9) {
-                        builder.append(ayah.substring(0, 38))
+                    if (ayahItem.surahId != 1 && ayahItem.surahId != 9) {
+                        var pos = ayah.indexOf("ٱلرَّحِيم")
+                        pos += "ٱلرَّحِيم".length
+                        builder.append(ayah.substring(0, pos + 1))
                         builder.append("\n")
+                        ayah = ayah.substring(pos + 1)
                     }
                 }
                 isFirst = false
