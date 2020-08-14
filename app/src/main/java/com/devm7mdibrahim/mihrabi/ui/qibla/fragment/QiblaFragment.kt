@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.RotateAnimation
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.devm7mdibrahim.mihrabi.databinding.FragmentQiblaBinding
@@ -19,8 +20,15 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class QiblaFragment : Fragment(), SensorEventListener {
-    private lateinit var mSensorManager: SensorManager
-    private lateinit var orientationSensor: Sensor
+
+    private val mSensorManager: SensorManager by lazy {
+        requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
+    }
+
+    private val orientationSensor: Sensor by lazy {
+        mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION)
+    }
+
     private val qiblaViewModel: QiblaViewModel by viewModels()
     private lateinit var qiblaBinding: FragmentQiblaBinding
     private var direction: Float = 0.0f
@@ -32,18 +40,20 @@ class QiblaFragment : Fragment(), SensorEventListener {
     ): View? {
         qiblaBinding = FragmentQiblaBinding.inflate(inflater, container, false)
         getDirection()
-        initSensor()
         return qiblaBinding.root
-    }
-
-    private fun initSensor() {
-        mSensorManager = requireContext().getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        orientationSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION)
     }
 
     override fun onResume() {
         super.onResume()
-        mSensorManager.registerListener(this, orientationSensor, SensorManager.SENSOR_DELAY_GAME)
+        if (mSensorManager != null && orientationSensor != null) {
+            mSensorManager.registerListener(
+                this,
+                orientationSensor,
+                SensorManager.SENSOR_DELAY_GAME
+            )
+        } else {
+            Toast.makeText(requireContext(), "Sensor not supported", Toast.LENGTH_LONG).show()
+        }
 
         qiblaBinding.backImgBtn.setOnClickListener {
             activity?.run {
@@ -86,9 +96,6 @@ class QiblaFragment : Fragment(), SensorEventListener {
         kaabaLoc.altitude = qiblaViewModel.getKaabaLatitude()
         kaabaLoc.longitude = qiblaViewModel.getKaabaLongitude()
         kaabaLoc.altitude = qiblaViewModel.getKaabaAltitude()
-
-        Log.d(TAG, "getDirection: " + qiblaViewModel.getUserLatitude())
-
 
         var bearingTo = userLoc.bearingTo(kaabaLoc)
         if (bearingTo < 0) bearingTo += 360

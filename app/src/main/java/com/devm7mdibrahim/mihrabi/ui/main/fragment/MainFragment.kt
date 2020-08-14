@@ -25,9 +25,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
-class MainFragment : Fragment() {
+class MainFragment : Fragment(){
 
-    private lateinit var bundle: Bundle
     private lateinit var fragmentMainBinding: FragmentMainBinding
     private val mainViewModel: MainViewModel by viewModels()
 
@@ -59,14 +58,14 @@ class MainFragment : Fragment() {
         fragmentMainBinding.misbahaButton.setOnClickListener { navController.navigate(R.id.action_mainFragment_to_misbahaFragment) }
 
         fragmentMainBinding.fiqhElsalahButton.setOnClickListener {
-            bundle = bundleOf(
+            val bundle = bundleOf(
                 Constants.FIQH_TYPE to 1,
                 Constants.FIQH_NAME to fragmentMainBinding.fiqhElsalahButton.text
             )
             navController.navigate(R.id.action_mainFragment_to_fiqhFragment, bundle)
         }
         fragmentMainBinding.fiqhEltaharaButton.setOnClickListener {
-            bundle = bundleOf(
+            val bundle = bundleOf(
                 Constants.FIQH_TYPE to 2,
                 Constants.FIQH_NAME to fragmentMainBinding.fiqhEltaharaButton.text
             )
@@ -121,7 +120,6 @@ class MainFragment : Fragment() {
         }
     }
 
-
     private fun updateUserCountry(location: Location) {
         try {
             val geoCoder = Geocoder(requireContext(), Locale("ar"))
@@ -136,4 +134,5 @@ class MainFragment : Fragment() {
             Log.d(Constants.TAG, "getUserCity: " + e.message)
         }
     }
+
 }
