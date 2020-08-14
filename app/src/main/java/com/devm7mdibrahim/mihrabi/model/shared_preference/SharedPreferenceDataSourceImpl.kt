@@ -27,7 +27,7 @@ class SharedPreferenceDataSourceImpl @Inject constructor(private val sharedPrefe
     override fun getUserLatitude(): String = sharedPreferences.getString(USER_LAT, "30.0444").toString()
     override fun getUserLongitude(): String = sharedPreferences.getString(USER_LONG, "31.2357").toString()
     override fun getUserAltitude(): String = sharedPreferences.getString(USER_ALTITUDE, "23").toString()
-    override fun getUserCountry(): String = sharedPreferences.getString(USER_COUNTRY, "لقاهرة، مصر").toString()
+    override fun getUserCountry(): String = sharedPreferences.getString(USER_COUNTRY, "القاهرة، مصر").toString()
     override fun getKaabaLatitude(): String = sharedPreferences.getString(KAABA_LATITUDE, "21.422487").toString()
     override fun getKaabaLongitude(): String = sharedPreferences.getString(KAABA_LONGITUDE, "39.826206").toString()
     override fun getKaabaAltitude(): String = sharedPreferences.getString(KAABA_ALTITUDE, "277.0").toString()
