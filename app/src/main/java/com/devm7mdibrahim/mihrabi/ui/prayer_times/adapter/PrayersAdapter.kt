@@ -29,14 +29,23 @@ class PrayersAdapter : RecyclerView.Adapter<PrayersAdapter.PrayersHolder>() {
         holder.prayerName.text = prayerName
 
         val displayedPrayerTime: String
-        displayedPrayerTime = if (prayerTime.hour >= 12) {
-            NumberHelper.getTimeArabicNumber(prayerTime.hour - 12) + ":" + NumberHelper.getTimeArabicNumber(
-                prayerTime.minute
-            ) + " م"
-        } else {
-            NumberHelper.getTimeArabicNumber(prayerTime.hour) + ":" + NumberHelper.getTimeArabicNumber(
-                prayerTime.minute
-            ) + " ص"
+
+        displayedPrayerTime = when (prayerTime.hour) {
+            in 13..23 -> {
+                NumberHelper.getTimeArabicNumber(prayerTime.hour - 12) + ":" + NumberHelper.getTimeArabicNumber(
+                    prayerTime.minute
+                ) + " م"
+            }
+            12 -> {
+                NumberHelper.getTimeArabicNumber(prayerTime.hour) + ":" + NumberHelper.getTimeArabicNumber(
+                    prayerTime.minute
+                ) + " م"
+            }
+            else -> {
+                NumberHelper.getTimeArabicNumber(prayerTime.hour) + ":" + NumberHelper.getTimeArabicNumber(
+                    prayerTime.minute
+                ) + " ص"
+            }
         }
         holder.prayerTime.text = displayedPrayerTime
     }
