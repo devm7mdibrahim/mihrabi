@@ -17,15 +17,13 @@ import com.devm7mdibrahim.mihrabi.R
 import com.devm7mdibrahim.mihrabi.databinding.FragmentMainBinding
 import com.devm7mdibrahim.mihrabi.ui.main.viewModel.MainViewModel
 import com.devm7mdibrahim.mihrabi.utils.Constants
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationCallback
-import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationResult
+import com.devm7mdibrahim.mihrabi.utils.Constants.TAG
+import com.google.android.gms.location.*
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
 
 @AndroidEntryPoint
-class MainFragment : Fragment(){
+class MainFragment : Fragment() {
 
     private lateinit var fragmentMainBinding: FragmentMainBinding
     private val mainViewModel: MainViewModel by viewModels()
@@ -75,37 +73,39 @@ class MainFragment : Fragment(){
 
     @SuppressLint("MissingPermission")
     private fun getUserLocation() {
-        val mFusedLocationProviderClient = FusedLocationProviderClient(requireContext())
+        val mFusedLocationProviderClient =
+            LocationServices.getFusedLocationProviderClient(requireContext())
         mFusedLocationProviderClient.lastLocation
-            .addOnCompleteListener { task ->
-                if (task.isSuccessful) {
-                    if (task.result != null) {
-                        updateUserLocation(task.result)
-                        updateUserCountry(task.result!!)
-                    } else {
-                        val locationRequest = LocationRequest.create()
-                        locationRequest.apply {
-                            interval = 5000
-                            fastestInterval = 2000
-                            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-                        }
+            .addOnSuccessListener { location ->
+                if (location != null) {
+                    updateUserLocation(location)
+                    updateUserCountry(location)
+                    Log.d(TAG, "getUserLocation: location not equal null")
+                } else {
+                    Log.d(TAG, "getUserLocation: location equal null")
+                    val locationRequest = LocationRequest.create()
+                    locationRequest.apply {
+                        interval = 10000
+                        fastestInterval = 5000
+                        priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+                    }
 
-                        val locationCallback = object : LocationCallback() {
-                            override fun onLocationResult(locationResult: LocationResult) {
-                                super.onLocationResult(locationResult)
-                                locationResult.lastLocation.let {
-                                    updateUserLocation(it)
-                                    updateUserCountry(it)
-                                }
+                    val locationCallback = object : LocationCallback() {
+                        override fun onLocationResult(locationResult: LocationResult) {
+                            super.onLocationResult(locationResult)
+                            locationResult.lastLocation.let {
+                                updateUserLocation(it)
+                                updateUserCountry(it)
+                                Log.d(TAG, "getUserLocation: location request success")
                             }
                         }
-
-                        mFusedLocationProviderClient.requestLocationUpdates(
-                            locationRequest,
-                            locationCallback,
-                            null
-                        )
                     }
+
+                    mFusedLocationProviderClient.requestLocationUpdates(
+                        locationRequest,
+                        locationCallback,
+                        null
+                    )
                 }
             }
     }
@@ -131,8 +131,7 @@ class MainFragment : Fragment(){
                 }
             }
         } catch (e: Exception) {
-            Log.d(Constants.TAG, "getUserCity: " + e.message)
+            Log.d(TAG, "getUserCity: " + e.message)
         }
     }
-
 }
