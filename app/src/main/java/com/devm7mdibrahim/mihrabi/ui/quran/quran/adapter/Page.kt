@@ -14,11 +14,11 @@ data class Page(var ayat: List<Ayah>, var pageNumber: Int = 0, var juz: Int = 0)
             for (ayahItem in it) {
                 var ayah = ayahItem.text
                 if (ayahItem.ayahIdInSurah == 1) {
-                    val tempSuraName = a(ayahItem.surahId)
+                    val surahName = a(ayahItem.surahId)
                     if (isFirst) {
-                        builder.append(tempSuraName + "\n")
+                        builder.append(surahName + "\n")
                     } else {
-                        builder.append("\n" + tempSuraName + "\n")
+                        builder.append("\n" + surahName + "\n")
                     }
 
                     if (ayahItem.surahId != 1 && ayahItem.surahId != 9) {

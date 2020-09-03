@@ -8,7 +8,7 @@
         android:layout_height="match_parent"
         android:layoutDirection="rtl"
         tools:context=".ui.azkar.detail.fragment.AzkarDetailsFragment"
-        android:background="@color/colorPrimary">
+        android:background="@drawable/azkar_bg">
 
         <ImageButton
             android:id="@+id/back_img_btn"

@@ -1,16 +1,47 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorPrimary"
-        tools:context=".ui.imaniat.ImaniatFragment">
+        tools:context=".ui.imaniat.fragment.ImaniatFragment">
 
         <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfViewer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/pdfViewer" />
+            android:visibility="gone" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/introduction_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/description_tv"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:fontFamily="@font/fiqh_bold"
+                android:padding="5dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/imaniat_introduction_text"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toTopOf="@+id/continue_tv"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/continue_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:fontFamily="@font/home"
+                android:text="متابعة"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

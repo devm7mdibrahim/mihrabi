@@ -54,7 +54,8 @@ class MainFragment : Fragment() {
         fragmentMainBinding.qadaaButton.setOnClickListener { navController.navigate(R.id.action_mainFragment_to_qadaaFragment) }
         fragmentMainBinding.fadlElsalahButton.setOnClickListener { navController.navigate(R.id.action_main_fragment_to_fadlElsalahFragment) }
         fragmentMainBinding.misbahaButton.setOnClickListener { navController.navigate(R.id.action_mainFragment_to_misbahaFragment) }
-
+        fragmentMainBinding.communicationButton.setOnClickListener { navController.navigate(R.id.action_main_fragment_to_communicationFragment) }
+        fragmentMainBinding.calenderButton.setOnClickListener { navController.navigate(R.id.action_main_fragment_to_calenderFragment) }
         fragmentMainBinding.fiqhElsalahButton.setOnClickListener {
             val bundle = bundleOf(
                 Constants.FIQH_TYPE to 1,

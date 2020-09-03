@@ -24,4 +24,7 @@ interface SharedPreferenceDataSource {
 
     fun getQadaaData(type: Int): Int
     fun setQadaaData(type: Int, number: Int)
+
+    fun isFirstTimeInImaniat(): Boolean
+    fun setIsFirstTimeInImaniat(boolean: Boolean)
 }

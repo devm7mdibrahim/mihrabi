@@ -19,7 +19,6 @@
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/guideline"
             app:layout_constraintEnd_toEndOf="@+id/user_city"
-            app:layout_constraintHorizontal_bias="0.507"
             app:layout_constraintStart_toStartOf="@+id/user_city" />
 
         <TextView

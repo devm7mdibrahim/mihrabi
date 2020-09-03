@@ -6,12 +6,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg">
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:context=".ui.main.fragment.MainFragment"
-            android:background="#fff"
             android:padding="20dp"
             android:layout_marginBottom="20dp"
             android:layoutDirection="rtl"
@@ -22,7 +22,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="12dp"
-                android:src="@drawable/logo"
+                android:src="@drawable/app_icon"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -115,7 +115,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:text="الخشوع"
+                android:text="تعلم الخشوع"
                 app:layout_constraintEnd_toEndOf="@+id/fadlElsalahButton"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/fadlElsalahButton"
@@ -184,30 +184,40 @@
                 app:layout_constraintTop_toBottomOf="@+id/qiblaButton" />
 
             <Button
-                android:id="@+id/aboutButton"
+                android:id="@+id/communicationButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
                 android:text="للتواصل"
-                android:layout_marginBottom="20dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/imaniatButton"
                 app:layout_constraintStart_toStartOf="@+id/imaniatButton"
                 app:layout_constraintTop_toBottomOf="@+id/imaniatButton" />
 
             <Button
-                android:id="@+id/shareButton"
+                android:id="@+id/calenderButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
-                android:text="مشاركة التطبيق"
-                app:layout_constraintBottom_toBottomOf="@+id/aboutButton"
+                android:text="التقويم الهجري"
+                app:layout_constraintBottom_toBottomOf="@+id/communicationButton"
                 app:layout_constraintEnd_toEndOf="@+id/qadaaButton"
                 app:layout_constraintStart_toStartOf="@+id/qadaaButton"
-                app:layout_constraintTop_toTopOf="@+id/aboutButton" />
+                app:layout_constraintTop_toTopOf="@+id/communicationButton" />
+
+            <Button
+                android:id="@+id/shareButton"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
+                android:text="مشاركة التطبيق"
+                app:layout_constraintEnd_toEndOf="@+id/communicationButton"
+                app:layout_constraintStart_toStartOf="@+id/communicationButton"
+                app:layout_constraintTop_toBottomOf="@+id/calenderButton" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

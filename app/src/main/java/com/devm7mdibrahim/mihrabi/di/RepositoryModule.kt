@@ -14,6 +14,8 @@ import com.devm7mdibrahim.mihrabi.ui.fadl_elsalah.repo.FadlElsalahRepository
 import com.devm7mdibrahim.mihrabi.ui.fadl_elsalah.repo.FadlElsalahRepositoryImpl
 import com.devm7mdibrahim.mihrabi.ui.fiqh.repo.FiqhRepository
 import com.devm7mdibrahim.mihrabi.ui.fiqh.repo.FiqhRepositoryImpl
+import com.devm7mdibrahim.mihrabi.ui.imaniat.repo.ImaniatRepository
+import com.devm7mdibrahim.mihrabi.ui.imaniat.repo.ImaniatRepositoryImpl
 import com.devm7mdibrahim.mihrabi.ui.main.repo.MainRepository
 import com.devm7mdibrahim.mihrabi.ui.main.repo.MainRepositoryImpl
 import com.devm7mdibrahim.mihrabi.ui.misbaha.repo.MisbahaRepository
@@ -34,10 +36,10 @@ import com.devm7mdibrahim.mihrabi.utils.NetworkHelper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.components.ActivityRetainedComponent
 
 @Module
-@InstallIn(ApplicationComponent::class)
+@InstallIn(ActivityRetainedComponent::class)
 object RepositoryModule {
 
     @Provides
@@ -93,5 +95,10 @@ object RepositoryModule {
     @Provides
     fun provideFadlElsalahRepository(remoteDataSource: RemoteDataSource, fadlElsalahLocalDataSource: FadlElsalahLocalDataSource, networkHelper: NetworkHelper): FadlElsalahRepository {
         return FadlElsalahRepositoryImpl(remoteDataSource, fadlElsalahLocalDataSource, networkHelper)
+    }
+
+    @Provides
+    fun provideImaniatRepository(sharedPreferenceDataSource: SharedPreferenceDataSource): ImaniatRepository{
+        return ImaniatRepositoryImpl(sharedPreferenceDataSource)
     }
 }

@@ -33,7 +33,7 @@
                 android:layout_marginStart="12dp"
                 android:text="قضاء الصلاة"
                 android:textColor="#000"
-                android:textSize="22sp"/>
+                android:textSize="22sp" />
         </LinearLayout>
 
         <RelativeLayout
@@ -81,14 +81,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="الفجر"
-                android:id="@+id/text1"/>
+                android:text="الفجر" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -137,14 +138,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="الظهر"
-                android:id="@+id/text2"/>
+                android:text="الظهر" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -193,14 +195,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="العصر"
-                android:id="@+id/text3"/>
+                android:text="العصر" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -249,14 +252,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="المغرب"
-                android:id="@+id/text4"/>
+                android:text="المغرب" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -304,14 +308,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="العشاء"
-                android:id="@+id/text5"/>
+                android:text="العشاء" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -359,14 +364,15 @@
                 android:ems="10"
                 android:gravity="center"
                 android:inputType="number"
-                android:text="0" />
+                android:text="0"
+                android:textDirection="ltr" />
 
             <TextView
+                android:id="@+id/text6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:text="الصيام"
-                android:id="@+id/text6"/>
+                android:text="الصيام" />
         </RelativeLayout>
 
     </LinearLayout>

@@ -8,13 +8,13 @@ apply plugin: 'com.google.firebase.crashlytics'
 
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         applicationId "com.devm7mdibrahim.mihrabi"
         minSdkVersion 17
-        targetSdkVersion 29
+        targetSdkVersion 30
         ndkVersion "21.1.6352462"
         versionCode 1
         versionName "1.0"
@@ -95,12 +95,12 @@ dependencies {
 
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.github.ahmedeltaher:Azan:3.0'
+    implementation 'com.github.eltohamy:material-hijri-calendarview:1.1.2'
+    implementation group: 'com.github.msarhan', name: 'ummalqura-calendar', version:'1.1.9'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.0.10'
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.1'
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
-    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
     implementation 'com.tuyenmonkey:mkloader:1.4.0'
     implementation 'com.skyfishjy.ripplebackground:library:1.0.1'
-
 }

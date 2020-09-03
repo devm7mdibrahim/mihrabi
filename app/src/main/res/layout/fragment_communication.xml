@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.communication.CommunicationFragment"
+        android:layoutDirection="rtl"
+        android:background="@drawable/bg"
+        tools:ignore="ContentDescription">
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:fontFamily="@font/attention"
+            android:text="@string/communication"
+            app:layout_constraintStart_toStartOf="@+id/back_img_btn"
+            app:layout_constraintTop_toBottomOf="@+id/azkar_name" />
+
+        <ImageButton
+            android:id="@+id/back_img_btn"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/back_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/azkar_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:text="@string/for_communication"
+            android:fontFamily="@font/attention"
+            app:layout_constraintBottom_toBottomOf="@+id/back_img_btn"
+            app:layout_constraintStart_toEndOf="@+id/back_img_btn"
+            app:layout_constraintTop_toTopOf="@+id/back_img_btn" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+
+        <ImageView
+            android:id="@+id/facebook_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_100sdp"
+            android:src="@drawable/facebook"
+            app:layout_constraintStart_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+        <ImageView
+            android:id="@+id/linkedin_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/linkedin"
+            app:layout_constraintBottom_toBottomOf="@+id/telegram_iv"
+            app:layout_constraintEnd_toEndOf="@+id/gmail_iv"
+            app:layout_constraintTop_toTopOf="@+id/telegram_iv" />
+
+        <ImageView
+            android:id="@+id/gmail_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:src="@drawable/gmail"
+            app:layout_constraintBottom_toBottomOf="@+id/facebook_iv"
+            app:layout_constraintEnd_toStartOf="@+id/guideline"
+            app:layout_constraintTop_toTopOf="@+id/facebook_iv"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/telegram_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/telegram"
+            app:layout_constraintEnd_toEndOf="@+id/facebook_iv"
+            app:layout_constraintStart_toStartOf="@+id/facebook_iv"
+            app:layout_constraintTop_toBottomOf="@+id/facebook_iv"
+            android:layout_marginTop="@dimen/_35sdp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

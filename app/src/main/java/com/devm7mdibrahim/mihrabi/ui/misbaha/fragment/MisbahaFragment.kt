@@ -26,7 +26,11 @@ class MisbahaFragment : Fragment() {
         requireContext().getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         misbahaBinding = FragmentMisbahaBinding.inflate(layoutInflater, container, false)
         return misbahaBinding.root
     }
@@ -35,12 +39,23 @@ class MisbahaFragment : Fragment() {
         super.onResume()
         misbahaBinding.misbahaBtn.text = misbahaViewModel.getMisbahaCount().toString()
 
+        if (misbahaViewModel.isVibrateOn()) {
+            misbahaBinding.misbahaVibrationBtn.setBackgroundResource(R.drawable.vibrate_on)
+        } else {
+            misbahaBinding.misbahaVibrationBtn.setBackgroundResource(R.drawable.vibrate_off)
+        }
+        
         misbahaBinding.misbahaBtn.run {
             setOnClickListener {
                 text = (text.toString().toInt() + 1).toString()
                 if (misbahaViewModel.isVibrateOn()) {
                     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                        vibrator.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE))
+                        vibrator.vibrate(
+                            VibrationEffect.createOneShot(
+                                200,
+                                VibrationEffect.DEFAULT_AMPLITUDE
+                            )
+                        )
                     } else {
                         vibrator.vibrate(200)
                     }
@@ -60,11 +75,10 @@ class MisbahaFragment : Fragment() {
         }
 
         misbahaBinding.misbahaVibrationBtn.setOnClickListener {
-            if (misbahaViewModel.isVibrateOn()){
+            if (misbahaViewModel.isVibrateOn()) {
                 misbahaViewModel.setVibrateOn(false)
                 misbahaBinding.misbahaVibrationBtn.setBackgroundResource(R.drawable.vibrate_off)
-            }
-            else{
+            } else {
                 misbahaViewModel.setVibrateOn(true)
                 misbahaBinding.misbahaVibrationBtn.setBackgroundResource(R.drawable.vibrate_on)
             }

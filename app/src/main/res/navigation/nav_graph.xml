@@ -137,7 +137,21 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_main_fragment_to_communicationFragment"
+            app:destination="@id/communicationFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
+        <action
+            android:id="@+id/action_main_fragment_to_calenderFragment"
+            app:destination="@id/calenderFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 
 
@@ -153,8 +167,9 @@
         <argument
             android:name="fiqh_type"
             android:defaultValue="1" />
-        <argument android:name="fiqh_name"
-            android:defaultValue="فقه الصلاة"/>
+        <argument
+            android:name="fiqh_name"
+            android:defaultValue="فقه الصلاة" />
 
     </fragment>
 
@@ -183,7 +198,7 @@
 
     <fragment
         android:id="@+id/imaniat_fragment"
-        android:name="com.devm7mdibrahim.mihrabi.ui.imaniat.ImaniatFragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.imaniat.fragment.ImaniatFragment"
         tools:layout="@layout/fragment_imaniat" />
 
     <fragment
@@ -229,7 +244,7 @@
 
         <argument
             android:name="azkar_name"
-            android:defaultValue="أذكار الصباح"/>
+            android:defaultValue="أذكار الصباح" />
     </fragment>
 
     <fragment
@@ -248,7 +263,7 @@
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"/>
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
 
     <fragment
@@ -259,8 +274,17 @@
         <argument
             android:name="fadl_type"
             android:defaultValue="1" />
-        <argument android:name="fadl_name"
-            android:defaultValue="صلاة الجماعة"/>
+        <argument
+            android:name="fadl_name"
+            android:defaultValue="صلاة الجماعة" />
     </fragment>
+    <fragment
+        android:id="@+id/communicationFragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.communication.CommunicationFragment"
+        android:label="CommunicationFragment" />
+    <fragment
+        android:id="@+id/calenderFragment"
+        android:name="com.devm7mdibrahim.mihrabi.ui.calender.CalenderFragment"
+        android:label="CalenderFragment" />
 
 </navigation>

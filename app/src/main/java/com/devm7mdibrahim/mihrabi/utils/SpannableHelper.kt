@@ -10,7 +10,7 @@ class SpannableHelper {
     companion object {
         fun getSpannable(text: String): Spannable? {
             val spannable: Spannable = SpannableString(text)
-            val regex = "لل"
+            val regex = "للَّه"
             val p = Pattern.compile(regex)
             val m = p.matcher(text)
             var start: Int

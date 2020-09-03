@@ -32,32 +32,39 @@ class QadaaFragment : Fragment() {
     }
 
     private fun init() {
-        qadaaBinding.minus1.setOnClickListener {
+        qadaaBinding.plus1.setOnClickListener {
+            if (qadaaBinding.qadaaEt1.text.toString().isEmpty()) qadaaBinding.qadaaEt1.setText("0")
+
             qadaaBinding.qadaaEt1.setText(
                 (qadaaBinding.qadaaEt1.text.toString().toInt() + 1).toString()
             )
         }
         qadaaBinding.plus2.setOnClickListener {
+            if (qadaaBinding.qadaaEt2.text.toString().isEmpty()) qadaaBinding.qadaaEt2.setText("0")
             qadaaBinding.qadaaEt2.setText(
                 (qadaaBinding.qadaaEt2.text.toString().toInt() + 1).toString()
             )
         }
         qadaaBinding.plus3.setOnClickListener {
+            if (qadaaBinding.qadaaEt3.text.toString().isEmpty()) qadaaBinding.qadaaEt3.setText("0")
             qadaaBinding.qadaaEt3.setText(
                 (qadaaBinding.qadaaEt3.text.toString().toInt() + 1).toString()
             )
         }
         qadaaBinding.plus4.setOnClickListener {
+            if (qadaaBinding.qadaaEt4.text.toString().isEmpty()) qadaaBinding.qadaaEt4.setText("0")
             qadaaBinding.qadaaEt4.setText(
                 (qadaaBinding.qadaaEt4.text.toString().toInt() + 1).toString()
             )
         }
         qadaaBinding.plus5.setOnClickListener {
+            if (qadaaBinding.qadaaEt5.text.toString().isEmpty()) qadaaBinding.qadaaEt5.setText("0")
             qadaaBinding.qadaaEt5.setText(
                 (qadaaBinding.qadaaEt5.text.toString().toInt() + 1).toString()
             )
         }
         qadaaBinding.plus6.setOnClickListener {
+            if (qadaaBinding.qadaaEt6.text.toString().isEmpty()) qadaaBinding.qadaaEt6.setText("0")
             qadaaBinding.qadaaEt6.setText(
                 (qadaaBinding.qadaaEt6.text.toString().toInt() + 1).toString()
             )
@@ -66,26 +73,32 @@ class QadaaFragment : Fragment() {
 
 
         qadaaBinding.minus1.setOnClickListener {
+            if (qadaaBinding.qadaaEt1.text.toString().isEmpty()) qadaaBinding.qadaaEt1.setText("0")
             qadaaBinding.qadaaEt1.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt1.setText((it - 1).toString()) }
         }
         qadaaBinding.minus2.setOnClickListener {
+            if (qadaaBinding.qadaaEt2.text.toString().isEmpty()) qadaaBinding.qadaaEt2.setText("0")
             qadaaBinding.qadaaEt2.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt2.setText((it - 1).toString()) }
         }
         qadaaBinding.minus3.setOnClickListener {
+            if (qadaaBinding.qadaaEt3.text.toString().isEmpty()) qadaaBinding.qadaaEt3.setText("0")
             qadaaBinding.qadaaEt3.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt3.setText((it - 1).toString()) }
         }
         qadaaBinding.minus4.setOnClickListener {
+            if (qadaaBinding.qadaaEt4.text.toString().isEmpty()) qadaaBinding.qadaaEt4.setText("0")
             qadaaBinding.qadaaEt4.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt4.setText((it - 1).toString()) }
         }
         qadaaBinding.minus5.setOnClickListener {
+            if (qadaaBinding.qadaaEt5.text.toString().isEmpty()) qadaaBinding.qadaaEt5.setText("0")
             qadaaBinding.qadaaEt5.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt5.setText((it - 1).toString()) }
         }
         qadaaBinding.minus6.setOnClickListener {
+            if (qadaaBinding.qadaaEt6.text.toString().isEmpty()) qadaaBinding.qadaaEt6.setText("0")
             qadaaBinding.qadaaEt6.text.toString().toInt()
                 .let { if (it > 0) qadaaBinding.qadaaEt6.setText((it - 1).toString()) }
         }
@@ -104,11 +117,25 @@ class QadaaFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        qadaaViewModel.setQadaaData(1, qadaaBinding.qadaaEt1.text.toString().toInt())
-        qadaaViewModel.setQadaaData(2, qadaaBinding.qadaaEt2.text.toString().toInt())
-        qadaaViewModel.setQadaaData(3, qadaaBinding.qadaaEt3.text.toString().toInt())
-        qadaaViewModel.setQadaaData(4, qadaaBinding.qadaaEt4.text.toString().toInt())
-        qadaaViewModel.setQadaaData(5, qadaaBinding.qadaaEt5.text.toString().toInt())
-        qadaaViewModel.setQadaaData(6, qadaaBinding.qadaaEt6.text.toString().toInt())
+        var text1 = qadaaBinding.qadaaEt1.text.toString().trim()
+        var text2 = qadaaBinding.qadaaEt2.text.toString().trim()
+        var text3 = qadaaBinding.qadaaEt3.text.toString().trim()
+        var text4 = qadaaBinding.qadaaEt4.text.toString().trim()
+        var text5 = qadaaBinding.qadaaEt5.text.toString().trim()
+        var text6 = qadaaBinding.qadaaEt6.text.toString().trim()
+
+        if (text1.isEmpty()) text1 = "0"
+        if (text2.isEmpty()) text2 = "0"
+        if (text3.isEmpty()) text3 = "0"
+        if (text4.isEmpty()) text4 = "0"
+        if (text5.isEmpty()) text5 = "0"
+        if (text6.isEmpty()) text6 = "0"
+
+        qadaaViewModel.setQadaaData(1, text1.toInt())
+        qadaaViewModel.setQadaaData(2, text2.toInt())
+        qadaaViewModel.setQadaaData(3, text3.toInt())
+        qadaaViewModel.setQadaaData(4, text4.toInt())
+        qadaaViewModel.setQadaaData(5, text5.toInt())
+        qadaaViewModel.setQadaaData(6, text6.toInt())
     }
 }

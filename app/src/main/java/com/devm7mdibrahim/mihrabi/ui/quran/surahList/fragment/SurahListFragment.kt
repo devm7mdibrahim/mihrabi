@@ -42,19 +42,18 @@ class SurahListFragment : Fragment(), ItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
         surahListBinding = FragmentSurahListBinding.inflate(inflater, container, false)
-        initRecyclerView()
-        fetchData()
-        return surahListBinding.root
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-
         surahListBinding.backImgBtn.setOnClickListener {
             activity?.run {
                 onBackPressed()
             }
         }
+        return surahListBinding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initRecyclerView()
+        fetchData()
     }
 
     private fun initRecyclerView() {

@@ -12,21 +12,22 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:layoutDirection="rtl"
-        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardBackgroundColor="#55000000"
         app:cardCornerRadius="8dp"
-        app:cardElevation="8dp">
+        app:cardElevation="4dp">
 
         <TextView
             android:id="@+id/zekr_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="12dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="12dp"
             android:layout_marginBottom="10dp"
             android:text="@{zekr.text}"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#FFFFFF" />
     </com.google.android.material.card.MaterialCardView>
 </layout>
