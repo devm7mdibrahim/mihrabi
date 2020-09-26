@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.fadl_elsalah.fragments.FadlElsalahFragment"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/quran2_bg"
         android:layoutDirection="rtl">
 
         <ImageButton

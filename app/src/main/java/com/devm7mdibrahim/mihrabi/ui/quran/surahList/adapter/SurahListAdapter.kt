@@ -21,7 +21,7 @@ class SurahListAdapter(val listener: ItemClickListener) : RecyclerView.Adapter<S
     override fun onBindViewHolder(holder: SurahListHolder, position: Int) {
         val surah = surahList[position]
         holder.surahName.text = surah.surahName
-        holder.surahNumber.text = NumberHelper.getArabicNumber(surah.page)
+        holder.surahNumber.text = NumberHelper.getArabicNumber(surah.number)
         holder.surahRevelationType.text = surah.revelationType
     }
 

@@ -7,39 +7,97 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/quran2_bg"
         android:layoutDirection="rtl">
 
-        <ImageButton
-            android:id="@+id/back_img_btn"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="24dp"
-            android:background="@drawable/back_icon"
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/back_img_btn"-->
+        <!--            android:layout_width="22dp"-->
+        <!--            android:layout_height="22dp"-->
+        <!--            android:layout_marginStart="24dp"-->
+        <!--            android:layout_marginTop="24dp"-->
+        <!--            android:background="@drawable/back_icon"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/textView2"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="8dp"-->
+        <!--            android:text="القرآن الكريم"-->
+        <!--            android:textColor="#000"-->
+        <!--            android:textSize="22sp"-->
+        <!--            app:layout_constraintBottom_toBottomOf="@+id/back_img_btn"-->
+        <!--            app:layout_constraintStart_toEndOf="@+id/back_img_btn"-->
+        <!--            app:layout_constraintTop_toTopOf="@+id/back_img_btn" />-->
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/_105sdp"
+            android:layout_height="@dimen/_70sdp"
+            android:src="@drawable/quran1_bg"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
 
         <TextView
-            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="القرآن الكريم"
-            android:textColor="#000"
-            android:textSize="22sp"
-            app:layout_constraintBottom_toBottomOf="@+id/back_img_btn"
-            app:layout_constraintStart_toEndOf="@+id/back_img_btn"
-            app:layout_constraintTop_toTopOf="@+id/back_img_btn" />
+            android:text="القرآن"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toStartOf="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            android:fontFamily="@font/segoe"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="الكريم"
+            android:textSize="30sp"
+            android:fontFamily="@font/segoe"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/searchView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:background="#ffffff"
+            android:paddingRight="@dimen/_10sdp"
+            android:paddingLeft="@dimen/_40sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            android:hint="@string/search"
+            android:textDirection="rtl"/>
+
+        <ImageView
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="0dp"
+            android:background="@drawable/surah_search_bg"
+            android:src="@drawable/ic_search"
+            app:layout_constraintBottom_toBottomOf="@+id/searchView"
+            app:layout_constraintEnd_toEndOf="@+id/searchView"
+            app:layout_constraintTop_toTopOf="@+id/searchView"
+            tools:ignore="ContentDescription" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/surah_recyclerview"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2"
-            tools:listitem="@layout/surah_item" />
+            app:layout_constraintTop_toBottomOf="@+id/searchView"
+            tools:listitem="@layout/surah_item"
+            android:layout_marginTop="5dp"/>
 
         <com.tuyenmonkey.mkloader.MKLoader
             android:id="@+id/surah_loader"

@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.devm7mdibrahim.mihrabi.R
-import com.devm7mdibrahim.mihrabi.databinding.AzkarItemBinding
+import com.devm7mdibrahim.mihrabi.databinding.ZekrItemBinding
 import com.devm7mdibrahim.mihrabi.model.local.azkar.Azkar
 
 class AzkarDetailsAdapter : RecyclerView.Adapter<AzkarDetailsAdapter.AzkarHolder>() {
@@ -15,7 +15,7 @@ class AzkarDetailsAdapter : RecyclerView.Adapter<AzkarDetailsAdapter.AzkarHolder
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AzkarHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val binding = DataBindingUtil.inflate<AzkarItemBinding>(inflater, R.layout.azkar_item, parent, false)
+        val binding = DataBindingUtil.inflate<ZekrItemBinding>(inflater, R.layout.zekr_item, parent, false)
         return AzkarHolder(binding)
     }
 
@@ -37,5 +37,5 @@ class AzkarDetailsAdapter : RecyclerView.Adapter<AzkarDetailsAdapter.AzkarHolder
         notifyDataSetChanged()
     }
 
-    inner class AzkarHolder(val binding: AzkarItemBinding) : RecyclerView.ViewHolder(binding.root)
+    inner class AzkarHolder(val binding: ZekrItemBinding) : RecyclerView.ViewHolder(binding.root)
 }

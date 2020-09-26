@@ -23,7 +23,7 @@
             android:padding="10dp"
             android:text="@{fadl.text}"
             android:lineSpacingExtra="5dp"
-            android:fontFamily="@font/fadl_medium"
+            android:fontFamily="@font/scheherazade_bold"
             android:textSize="18sp"/>
 
     </androidx.cardview.widget.CardView>

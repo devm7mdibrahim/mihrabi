@@ -42,11 +42,11 @@ class SurahListFragment : Fragment(), ItemClickListener {
         savedInstanceState: Bundle?
     ): View? {
         surahListBinding = FragmentSurahListBinding.inflate(inflater, container, false)
-        surahListBinding.backImgBtn.setOnClickListener {
-            activity?.run {
-                onBackPressed()
-            }
-        }
+//        surahListBinding.backImgBtn.setOnClickListener {
+//            activity?.run {
+//                onBackPressed()
+//            }
+//        }
         return surahListBinding.root
     }
 

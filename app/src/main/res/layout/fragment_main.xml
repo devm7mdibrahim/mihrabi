@@ -187,13 +187,13 @@
                 android:id="@+id/communicationButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="32dp"
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
                 android:text="للتواصل"
-                app:layout_constraintEnd_toEndOf="@+id/imaniatButton"
-                app:layout_constraintStart_toStartOf="@+id/imaniatButton"
-                app:layout_constraintTop_toBottomOf="@+id/imaniatButton" />
+                app:layout_constraintBottom_toBottomOf="@+id/calenderButton"
+                app:layout_constraintEnd_toEndOf="@+id/qadaaButton"
+                app:layout_constraintStart_toStartOf="@+id/qadaaButton"
+                app:layout_constraintTop_toTopOf="@+id/calenderButton"  />
 
             <Button
                 android:id="@+id/calenderButton"
@@ -202,21 +202,23 @@
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
                 android:text="التقويم الهجري"
-                app:layout_constraintBottom_toBottomOf="@+id/communicationButton"
-                app:layout_constraintEnd_toEndOf="@+id/qadaaButton"
-                app:layout_constraintStart_toStartOf="@+id/qadaaButton"
-                app:layout_constraintTop_toTopOf="@+id/communicationButton" />
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="@+id/imaniatButton"
+                app:layout_constraintStart_toStartOf="@+id/imaniatButton"
+                app:layout_constraintTop_toBottomOf="@+id/imaniatButton"/>
 
             <Button
                 android:id="@+id/shareButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
                 android:text="مشاركة التطبيق"
-                app:layout_constraintEnd_toEndOf="@+id/communicationButton"
-                app:layout_constraintStart_toStartOf="@+id/communicationButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/calenderButton"
+                app:layout_constraintStart_toStartOf="@+id/calenderButton"
                 app:layout_constraintTop_toBottomOf="@+id/calenderButton" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

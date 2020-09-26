@@ -13,14 +13,21 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.devm7mdibrahim.mihrabi.R
 import com.devm7mdibrahim.mihrabi.databinding.FragmentMainBinding
+import com.devm7mdibrahim.mihrabi.reminder.AppWorker
 import com.devm7mdibrahim.mihrabi.ui.main.viewModel.MainViewModel
 import com.devm7mdibrahim.mihrabi.utils.Constants
 import com.devm7mdibrahim.mihrabi.utils.Constants.TAG
-import com.google.android.gms.location.*
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
+import com.google.android.gms.location.LocationServices
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.*
+import java.util.concurrent.TimeUnit
 
 @AndroidEntryPoint
 class MainFragment : Fragment() {
@@ -39,7 +46,14 @@ class MainFragment : Fragment() {
     ): View? {
         fragmentMainBinding = FragmentMainBinding.inflate(inflater, container, false)
         getUserLocation()
+        initAppWorker()
         return fragmentMainBinding.root
+    }
+
+    private fun initAppWorker() {
+        val work = PeriodicWorkRequestBuilder<AppWorker>(1, TimeUnit.DAYS).build()
+        val workManager = WorkManager.getInstance(requireContext())
+        workManager.enqueue(work)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

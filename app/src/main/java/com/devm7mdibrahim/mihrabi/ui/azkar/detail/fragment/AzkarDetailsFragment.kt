@@ -1,6 +1,7 @@
 package com.devm7mdibrahim.mihrabi.ui.azkar.detail.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,6 +13,7 @@ import com.devm7mdibrahim.mihrabi.databinding.FragmentAzkarDetailsBinding
 import com.devm7mdibrahim.mihrabi.ui.azkar.detail.adapter.AzkarDetailsAdapter
 import com.devm7mdibrahim.mihrabi.ui.azkar.viewModel.AzkarViewModel
 import com.devm7mdibrahim.mihrabi.utils.Constants
+import com.devm7mdibrahim.mihrabi.utils.Constants.TAG
 import com.devm7mdibrahim.mihrabi.utils.DataState
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -65,6 +67,7 @@ class AzkarDetailsFragment : Fragment() {
     }
 
     private fun fetchAzkar() {
+        Log.d(TAG, "fetchAzkar: $type")
         azkarViewModel.fetchAzkar(type + 1)
         azkarViewModel.azkar.observe(viewLifecycleOwner, Observer {
             when (it) {

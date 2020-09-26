@@ -7,8 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layoutDirection="rtl"
-        tools:context=".ui.azkar.detail.fragment.AzkarDetailsFragment"
-        android:background="@drawable/azkar_bg">
+        tools:context=".ui.azkar.detail.fragment.AzkarDetailsFragment">
 
         <ImageButton
             android:id="@+id/back_img_btn"
@@ -41,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/azkar_name"
             android:layout_marginTop="15dp"
-            tools:listitem="@layout/azkar_item"/>
+            tools:listitem="@layout/zekr_item"/>
 
         <com.tuyenmonkey.mkloader.MKLoader
             android:layout_width="wrap_content"

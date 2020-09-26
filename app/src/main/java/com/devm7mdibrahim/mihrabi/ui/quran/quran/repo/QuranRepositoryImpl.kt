@@ -4,14 +4,17 @@ import com.devm7mdibrahim.mihrabi.model.local.quran.Ayah
 import com.devm7mdibrahim.mihrabi.model.local.quran.AyahLocalDataSource
 import com.devm7mdibrahim.mihrabi.model.network.remote.RemoteDataSource
 import com.devm7mdibrahim.mihrabi.ui.quran.quran.adapter.Page
-import com.devm7mdibrahim.mihrabi.ui.quran.quran.repo.QuranRepository
 import com.devm7mdibrahim.mihrabi.utils.DataState
 import com.devm7mdibrahim.mihrabi.utils.NetworkHelper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
-class QuranRepositoryImpl @Inject constructor(private val ayahLocalDataSource: AyahLocalDataSource, private val remoteDataSource: RemoteDataSource, private val networkHelper: NetworkHelper) :
+class QuranRepositoryImpl @Inject constructor(
+    private val ayahLocalDataSource: AyahLocalDataSource,
+    private val remoteDataSource: RemoteDataSource,
+    private val networkHelper: NetworkHelper
+) :
     QuranRepository {
     override suspend fun getQuranPagesList(): Flow<DataState<List<Page>>> = flow {
         emit(DataState.Loading)
@@ -26,7 +29,16 @@ class QuranRepositoryImpl @Inject constructor(private val ayahLocalDataSource: A
                         val quranDataToInsertToDB = mutableListOf<Ayah>()
                         for (surah in quranResponse.body()!!.data.surahs) {
                             for (ayah in surah.ayahs) {
-                                quranDataToInsertToDB.add(Ayah(ayah.number, ayah.numberInSurah, surah.number, ayah.page, ayah.juz, ayah.text))
+                                quranDataToInsertToDB.add(
+                                    Ayah(
+                                        ayah.number,
+                                        ayah.numberInSurah,
+                                        surah.number,
+                                        ayah.page,
+                                        ayah.juz,
+                                        ayah.text
+                                    )
+                                )
                             }
                         }
                         ayahLocalDataSource.insertAllAyat(quranDataToInsertToDB)

@@ -45,6 +45,7 @@ class PrayerTimesFragment : Fragment() {
         initRecyclerView()
         getUserLocation()
         getHijriDate()
+
         return prayerTimesBinding.root
     }
 

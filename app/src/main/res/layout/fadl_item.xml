@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_10sdp"
-        app:cardBackgroundColor="@color/colorPrimary">
+        app:cardBackgroundColor="#fff">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="@dimen/_140sdp"
@@ -24,7 +24,7 @@
                 android:id="@+id/item_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/fadl_medium"
+                android:fontFamily="@font/scheherazade_bold"
                 android:text="@{fadl.text}"
                 android:gravity="center"
                 android:textSize="20sp"

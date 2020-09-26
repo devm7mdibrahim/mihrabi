@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devm7mdibrahim.mihrabi.R
 import com.devm7mdibrahim.mihrabi.databinding.FragmentAzkarBinding
@@ -56,7 +57,7 @@ class AzkarFragment : Fragment(), ItemClickListener {
 
     private fun initRecyclerView() {
         azkarBinding.azkarRv.apply {
-            layoutManager = LinearLayoutManager(requireContext())
+            layoutManager = GridLayoutManager(requireContext(), 3)
             setHasFixedSize(true)
             adapter = azkarAdapter
         }

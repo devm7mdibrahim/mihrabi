@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import androidx.core.app.ActivityCompat
@@ -27,14 +28,19 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
     }
 
     private fun checkLocationPermissionFromDevice() {
-        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            Handler().postDelayed({
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            Handler(Looper.getMainLooper()).postDelayed({
                 navController.navigate(R.id.action_splashFragment_to_mainFragment)
-            }, 2000)
+            }, 1500)
         } else {
-            Handler().postDelayed({
+
+            Handler(Looper.getMainLooper()).postDelayed({
                 navController.navigate(R.id.action_splashFragment_to_permissionFragment)
-            }, 2000)
+            }, 1500)
         }
     }
 
