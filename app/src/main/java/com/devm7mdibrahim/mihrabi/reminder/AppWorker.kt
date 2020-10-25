@@ -25,33 +25,42 @@ class AppWorker(val context: Context, params: WorkerParameters) : Worker(context
 
     private fun getPrayerTimes() {
 
-        //get location
-        val sharedPreferences: SharedPreferences =
-            context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
-        val latitude = sharedPreferences.getString(USER_LAT, "30.0444")
-        val longitude = sharedPreferences.getString(USER_LONG, "31.2357")
+//        //get location
+//        val sharedPreferences: SharedPreferences =
+//            context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
+//        val latitude = sharedPreferences.getString(USER_LAT, "30.0444")
+//        val longitude = sharedPreferences.getString(USER_LONG, "31.2357")
+//
+//
+//        //get prayer times
+//        val mGMTOffset = GregorianCalendar().timeZone.rawOffset
+//        val gmtDiff = TimeUnit.HOURS.convert(
+//            mGMTOffset.toLong(),
+//            TimeUnit.MILLISECONDS
+//        )
+//
+//        val today = SimpleDate(GregorianCalendar())
+//        var location: Location? = null
+//        if (latitude != null && longitude != null) {
+//            location = Location(
+//                latitude.toDouble(),
+//                longitude.toDouble(),
+//                gmtDiff.toDouble(),
+//                0
+//            )
+//        }
+//        val azan = Azan(location, EGYPT_SURVEY)
+//
+//        val prayers = azan.getPrayerTimes(today).times
 
-
-        //get prayer times
-        val mGMTOffset = GregorianCalendar().timeZone.rawOffset
-        val gmtDiff = TimeUnit.HOURS.convert(
-            mGMTOffset.toLong(),
-            TimeUnit.MILLISECONDS
+        val prayers = arrayOf(
+            Time(22, 40, 0, false),
+            Time(22, 41, 0, false),
+            Time(22, 42, 0, false),
+            Time(22, 43, 0, false),
+            Time(22, 44, 0, false),
+            Time(22, 45, 0, false)
         )
-
-        val today = SimpleDate(GregorianCalendar())
-        var location: Location? = null
-        if (latitude != null && longitude != null) {
-            location = Location(
-                latitude.toDouble(),
-                longitude.toDouble(),
-                gmtDiff.toDouble(),
-                0
-            )
-        }
-        val azan = Azan(location, EGYPT_SURVEY)
-
-        val prayers = azan.getPrayerTimes(today).times
 
         //schedule notification
         scheduleNotification(prayers)

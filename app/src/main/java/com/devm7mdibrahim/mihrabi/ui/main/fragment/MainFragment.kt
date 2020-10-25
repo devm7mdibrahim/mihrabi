@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.work.ExistingPeriodicWorkPolicy
 import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.devm7mdibrahim.mihrabi.R
@@ -53,7 +54,7 @@ class MainFragment : Fragment() {
     private fun initAppWorker() {
         val work = PeriodicWorkRequestBuilder<AppWorker>(1, TimeUnit.DAYS).build()
         val workManager = WorkManager.getInstance(requireContext())
-        workManager.enqueue(work)
+        workManager.enqueueUniquePeriodicWork("UniqueName", ExistingPeriodicWorkPolicy.KEEP,work)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
