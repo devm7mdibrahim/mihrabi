@@ -23,7 +23,8 @@ class AzkarViewModel @ViewModelInject constructor(private val azkarRepository: A
 
     fun fetchAzkar(type: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            azkarRepository.fetchAzkar(type = type)
+            azkarRepository
+                .fetchAzkar(type = type)
                 .onEach {
                     _azkar.postValue(it)
                 }.launchIn(viewModelScope)

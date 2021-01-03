@@ -8,6 +8,7 @@ import com.devm7mdibrahim.mihrabi.model.local.surah.SurahLocalDataSource
 import com.devm7mdibrahim.mihrabi.model.network.places.PlacesDataSource
 import com.devm7mdibrahim.mihrabi.model.network.remote.RemoteDataSource
 import com.devm7mdibrahim.mihrabi.model.shared_preference.SharedPreferenceDataSource
+import com.devm7mdibrahim.mihrabi.ui.azkar.mapper.AzkarEntityMapper
 import com.devm7mdibrahim.mihrabi.ui.azkar.repo.AzkarRepository
 import com.devm7mdibrahim.mihrabi.ui.azkar.repo.AzkarRepositoryImpl
 import com.devm7mdibrahim.mihrabi.ui.fadl_elsalah.repo.FadlElsalahRepository
@@ -48,8 +49,8 @@ object RepositoryModule {
     }
 
     @Provides
-    fun provideAzkarRepository(remoteDataSource: RemoteDataSource, azkarLocalDataSource: AzkarLocalDataSource, networkHelper: NetworkHelper): AzkarRepository {
-        return AzkarRepositoryImpl(remoteDataSource, azkarLocalDataSource, networkHelper)
+    fun provideAzkarRepository(remoteDataSource: RemoteDataSource, azkarLocalDataSource: AzkarLocalDataSource, azkarEntityMapper: AzkarEntityMapper, networkHelper: NetworkHelper): AzkarRepository {
+        return AzkarRepositoryImpl(remoteDataSource, azkarLocalDataSource, networkHelper, azkarEntityMapper)
     }
 
     @Provides

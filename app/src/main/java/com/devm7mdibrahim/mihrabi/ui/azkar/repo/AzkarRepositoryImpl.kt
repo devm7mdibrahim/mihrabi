@@ -1,10 +1,9 @@
 package com.devm7mdibrahim.mihrabi.ui.azkar.repo
 
-import android.util.Log
 import com.devm7mdibrahim.mihrabi.model.local.azkar.Azkar
 import com.devm7mdibrahim.mihrabi.model.local.azkar.AzkarLocalDataSource
 import com.devm7mdibrahim.mihrabi.model.network.remote.RemoteDataSource
-import com.devm7mdibrahim.mihrabi.utils.Constants.TAG
+import com.devm7mdibrahim.mihrabi.ui.azkar.mapper.AzkarEntityMapper
 import com.devm7mdibrahim.mihrabi.utils.DataState
 import com.devm7mdibrahim.mihrabi.utils.NetworkHelper
 import kotlinx.coroutines.flow.Flow
@@ -14,7 +13,8 @@ import javax.inject.Inject
 class AzkarRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     private val azkarLocalDataSource: AzkarLocalDataSource,
-    private val networkHelper: NetworkHelper
+    private val networkHelper: NetworkHelper,
+    private val azkarEntityMapper: AzkarEntityMapper
 ) : AzkarRepository {
 
     override suspend fun fetchAzkar(type: Int): Flow<DataState<List<Azkar>>> = flow {
@@ -24,24 +24,15 @@ class AzkarRepositoryImpl @Inject constructor(
             if (networkHelper.isNetworkConnected()) {
                 try {
                     val azkarList = remoteDataSource.getAzkar(type)
-                    val azkarListToInsertToDB = mutableListOf<Azkar>()
-                    for (zekr in azkarList.body()!!.content) {
-                        azkarListToInsertToDB.add(
-                            Azkar(
-                                id = zekr.id,
-                                text = zekr.zekr,
-                                type = zekr.type
-                            )
-                        )
+                    azkarList.body()?.let {
+                        val transformToLocal = azkarEntityMapper.transformToLocal(it.content)
+                        saveAzkar(transformToLocal)
+                        emit(DataState.Success(transformToLocal))
                     }
-                    azkarLocalDataSource.insertAzkar(azkarListToInsertToDB)
-
-                    val cachedAzkar = azkarLocalDataSource.getAzkar(type)
-                    emit(DataState.Success(cachedAzkar))
-                } catch (exception: Exception) {
-                    Log.d(TAG, "fetchAzkar: " + exception.message)
+                } catch (e: Exception) {
                     emit(DataState.Error("برجاء التأكد من الاتصال بالانترنت والمحاولة مرة أخرى :(("))
                 }
+
             } else {
                 emit(DataState.Error("لا يوجد اتصال بالانترنت :(("))
             }
@@ -49,5 +40,9 @@ class AzkarRepositoryImpl @Inject constructor(
             val cachedAzkar = azkarLocalDataSource.getAzkar(type)
             emit(DataState.Success(cachedAzkar))
         }
+    }
+
+    private suspend fun saveAzkar(azkar: List<Azkar>) {
+        azkarLocalDataSource.insertAzkar(azkar)
     }
 }

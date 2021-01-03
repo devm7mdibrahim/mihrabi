@@ -11,7 +11,6 @@ import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.devm7mdibrahim.mihrabi.R
 import com.devm7mdibrahim.mihrabi.databinding.FragmentAzkarBinding
 import com.devm7mdibrahim.mihrabi.model.local.azkar.Azkar
