@@ -4,8 +4,8 @@ object Constants {
 
     const val DATABASE_NAME = "app_database"
     const val LOCATION_REQUEST_PERMISSION_CODE: Int = 100
-    const val BASE_URL = "https://mohamedib16.github.io/mihrabi/"
-    const val PLACES_BASE_URL = "https://maps.googleapis.com/maps/api/"
+    //const val BASE_URL = "https://mohamedib16.github.io/mihrabi/"
+//    const val PLACES_BASE_URL = "https://maps.googleapis.com/maps/api/"
     //const val GOOGLE_MAPS_KEY = "AIzaSyDN7RJFmImYAca96elyZlE5s_fhX-MMuhk"
     const val GOOGLE_MAPS_KEY = "AIzaSyDSI69yNMMOYqhmd-LIbZqFv_AJmKAl6vo"
     const val PRAYER_CHANNEL_ID = "prayer_channel"

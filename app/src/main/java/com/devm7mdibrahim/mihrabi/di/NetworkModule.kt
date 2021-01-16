@@ -1,6 +1,7 @@
 package com.devm7mdibrahim.mihrabi.di
 
 import android.content.Context
+import com.devm7mdibrahim.mihrabi.BuildConfig
 import com.devm7mdibrahim.mihrabi.model.network.remote.ApiService
 import com.devm7mdibrahim.mihrabi.model.network.places.PlacesApiService
 import com.devm7mdibrahim.mihrabi.model.network.places.PlacesDataSource
@@ -8,8 +9,6 @@ import com.devm7mdibrahim.mihrabi.model.network.places.PlacesDataSourceImpl
 import com.devm7mdibrahim.mihrabi.model.network.remote.RemoteDataSource
 import com.devm7mdibrahim.mihrabi.model.network.remote.RemoteDataSourceImpl
 import com.devm7mdibrahim.mihrabi.utils.Constants
-import com.devm7mdibrahim.mihrabi.utils.Constants.BASE_URL
-import com.devm7mdibrahim.mihrabi.utils.Constants.PLACES_BASE_URL
 import com.devm7mdibrahim.mihrabi.utils.NetworkHelper
 import dagger.Module
 import dagger.Provides
@@ -32,7 +31,7 @@ object NetworkModule {
     @Named("default")
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BuildConfig.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
     }
@@ -42,7 +41,7 @@ object NetworkModule {
     @Named("places")
     fun providePlacesRetrofit(okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-                .baseUrl(PLACES_BASE_URL)
+                .baseUrl(BuildConfig.PLACES_BASE_URL)
                 .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -54,7 +53,7 @@ object NetworkModule {
         val interceptor = Interceptor { chain ->
             val url = chain.request().url().newBuilder()
                     .addQueryParameter("type", "mosque")
-                    .addQueryParameter("key", Constants.GOOGLE_MAPS_KEY)
+                    .addQueryParameter("key", BuildConfig.GOOGLE_MAPS_KEY)
                     .addQueryParameter("radius", 3000.toString())
                     .build()
             val request = chain.request()

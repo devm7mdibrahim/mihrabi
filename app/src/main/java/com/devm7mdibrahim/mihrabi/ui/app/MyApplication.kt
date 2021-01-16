@@ -7,17 +7,28 @@ import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.hilt.work.HiltWorkerFactory
+import androidx.work.Configuration
 import com.devm7mdibrahim.mihrabi.R
 import com.devm7mdibrahim.mihrabi.utils.Constants.PRAYER_CHANNEL_ID
 import com.devm7mdibrahim.mihrabi.utils.LocalizationUtil
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
 
 @HiltAndroidApp
-class MyApplication : Application() {
+class MyApplication : Application(), Configuration.Provider {
 
     private lateinit var notificationManager: NotificationManager
+
+    @Inject
+    lateinit var workerFactory: HiltWorkerFactory
+
+    override fun getWorkManagerConfiguration() =
+        Configuration.Builder()
+            .setWorkerFactory(workerFactory)
+            .build()
 
     override fun onCreate() {
         super.onCreate()

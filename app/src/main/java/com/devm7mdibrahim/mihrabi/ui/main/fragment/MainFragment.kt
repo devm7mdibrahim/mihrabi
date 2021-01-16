@@ -1,6 +1,7 @@
 package com.devm7mdibrahim.mihrabi.ui.main.fragment
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.location.Geocoder
 import android.location.Location
 import android.os.Bundle
@@ -84,6 +85,16 @@ class MainFragment : Fragment() {
                 Constants.FIQH_NAME to fragmentMainBinding.fiqhEltaharaButton.text
             )
             navController.navigate(R.id.action_mainFragment_to_fiqhFragment, bundle)
+        }
+
+        fragmentMainBinding.shareButton.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=com.devm7mdibrahim.mihrabi")
+            intent.type = "text/plain"
+
+            val shareIntent = Intent.createChooser(intent, null)
+            startActivity(shareIntent)
         }
     }
 

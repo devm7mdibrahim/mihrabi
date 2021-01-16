@@ -8,7 +8,6 @@ import androidx.lifecycle.viewModelScope
 import com.devm7mdibrahim.mihrabi.model.local.azkar.Azkar
 import com.devm7mdibrahim.mihrabi.ui.azkar.repo.AzkarRepository
 import com.devm7mdibrahim.mihrabi.utils.DataState
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
@@ -22,9 +21,9 @@ class AzkarViewModel @ViewModelInject constructor(private val azkarRepository: A
         get() = _azkar
 
     fun fetchAzkar(type: Int) {
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch {
             azkarRepository
-                .fetchAzkar(type = type)
+                .fetchAzkar(type = type, list = emptyList())
                 .onEach {
                     _azkar.postValue(it)
                 }.launchIn(viewModelScope)

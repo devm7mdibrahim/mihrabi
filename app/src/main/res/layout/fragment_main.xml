@@ -8,14 +8,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".ui.main.fragment.MainFragment"
-            android:padding="20dp"
             android:layout_marginBottom="20dp"
             android:layoutDirection="rtl"
+            android:padding="20dp"
+            tools:context=".ui.main.fragment.MainFragment"
             tools:ignore="HardcodedText">
+
 
             <ImageView
                 android:id="@+id/textView7"
@@ -49,12 +51,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/fiqhElsalahButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="فقه الصلاة"
                 app:layout_constraintEnd_toEndOf="@+id/awlMaraAsalyButton"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -62,22 +64,22 @@
                 app:layout_constraintTop_toBottomOf="@+id/awlMaraAsalyButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/fiqhEltaharaButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="فقه الطهارة"
                 app:layout_constraintEnd_toEndOf="@+id/misbahaButton"
                 app:layout_constraintStart_toStartOf="@+id/misbahaButton"
                 app:layout_constraintTop_toTopOf="@+id/fiqhElsalahButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/azkarButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="الأذكار"
                 app:layout_constraintBottom_toBottomOf="@+id/qiblaButton"
                 app:layout_constraintEnd_toEndOf="@+id/quranButton"
@@ -85,11 +87,11 @@
                 app:layout_constraintTop_toTopOf="@+id/qiblaButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/nearbyMosquesButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="أقرب المساجد"
                 app:layout_constraintBottom_toBottomOf="@+id/fadlElsalahButton"
                 app:layout_constraintEnd_toEndOf="@+id/azkarButton"
@@ -97,11 +99,11 @@
                 app:layout_constraintTop_toTopOf="@+id/fadlElsalahButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/quranButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="القرآن الكريم"
                 app:layout_constraintBottom_toBottomOf="@+id/prayerTimesButton"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -109,12 +111,12 @@
                 app:layout_constraintTop_toTopOf="@+id/prayerTimesButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/awlMaraAsalyButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="تعلم الخشوع"
                 app:layout_constraintEnd_toEndOf="@+id/fadlElsalahButton"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -122,12 +124,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/fadlElsalahButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/qiblaButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="القبلة"
                 app:layout_constraintEnd_toEndOf="@+id/prayerTimesButton"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -147,11 +149,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/fiqhElsalahButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/misbahaButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
                 android:text="المسبحة"
                 app:layout_constraintBottom_toBottomOf="@+id/awlMaraAsalyButton"
                 app:layout_constraintEnd_toEndOf="@+id/nearbyMosquesButton"
@@ -170,14 +172,14 @@
                 app:layout_constraintTop_toTopOf="@+id/qadaaButton" />
 
             <Button
-                android:fontFamily="@font/home"
-                android:background="@drawable/main_btn_bg"
                 android:id="@+id/fadlElsalahButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:text="فضل الصلاة"
                 android:layout_marginBottom="20dp"
+                android:background="@drawable/main_btn_bg"
+                android:fontFamily="@font/home"
+                android:text="فضل الصلاة"
                 app:layout_constraintEnd_toEndOf="@+id/qiblaButton"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/qiblaButton"
@@ -193,19 +195,19 @@
                 app:layout_constraintBottom_toBottomOf="@+id/calenderButton"
                 app:layout_constraintEnd_toEndOf="@+id/qadaaButton"
                 app:layout_constraintStart_toStartOf="@+id/qadaaButton"
-                app:layout_constraintTop_toTopOf="@+id/calenderButton"  />
+                app:layout_constraintTop_toTopOf="@+id/calenderButton" />
 
             <Button
                 android:id="@+id/calenderButton"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_marginTop="32dp"
                 android:background="@drawable/main_btn_bg"
                 android:fontFamily="@font/home"
                 android:text="التقويم الهجري"
-                android:layout_marginTop="32dp"
                 app:layout_constraintEnd_toEndOf="@+id/imaniatButton"
                 app:layout_constraintStart_toStartOf="@+id/imaniatButton"
-                app:layout_constraintTop_toBottomOf="@+id/imaniatButton"/>
+                app:layout_constraintTop_toBottomOf="@+id/imaniatButton" />
 
             <Button
                 android:id="@+id/shareButton"

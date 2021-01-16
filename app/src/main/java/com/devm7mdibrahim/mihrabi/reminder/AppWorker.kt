@@ -1,66 +1,58 @@
 package com.devm7mdibrahim.mihrabi.reminder
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.util.Log
+import androidx.hilt.Assisted
+import androidx.hilt.work.WorkerInject
 import androidx.work.*
 import com.azan.Azan
 import com.azan.Method.Companion.EGYPT_SURVEY
 import com.azan.Time
 import com.azan.astrologicalCalc.Location
 import com.azan.astrologicalCalc.SimpleDate
-import com.devm7mdibrahim.mihrabi.utils.Constants.SHARED_PREFERENCE_NAME
+import com.devm7mdibrahim.mihrabi.ui.prayer_times.repo.PrayerTimesRepository
+import com.devm7mdibrahim.mihrabi.ui.prayer_times.repo.PrayerTimesRepositoryImpl
 import com.devm7mdibrahim.mihrabi.utils.Constants.TAG
-import com.devm7mdibrahim.mihrabi.utils.Constants.USER_LAT
-import com.devm7mdibrahim.mihrabi.utils.Constants.USER_LONG
 import java.lang.System.currentTimeMillis
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-class AppWorker(val context: Context, params: WorkerParameters) : Worker(context, params) {
+class AppWorker @WorkerInject constructor(@Assisted val context: Context, @Assisted params: WorkerParameters, private val prayerTimesRepository: PrayerTimesRepositoryImpl) : Worker(context, params) {
     override fun doWork(): Result {
         getPrayerTimes()
         return Result.success()
     }
 
     private fun getPrayerTimes() {
+        val latitude = prayerTimesRepository.getUserLatitude()
+        val longitude = prayerTimesRepository.getUserLongitude()
 
-//        //get location
-//        val sharedPreferences: SharedPreferences =
-//            context.getSharedPreferences(SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE)
-//        val latitude = sharedPreferences.getString(USER_LAT, "30.0444")
-//        val longitude = sharedPreferences.getString(USER_LONG, "31.2357")
-//
-//
-//        //get prayer times
-//        val mGMTOffset = GregorianCalendar().timeZone.rawOffset
-//        val gmtDiff = TimeUnit.HOURS.convert(
-//            mGMTOffset.toLong(),
-//            TimeUnit.MILLISECONDS
-//        )
-//
-//        val today = SimpleDate(GregorianCalendar())
-//        var location: Location? = null
-//        if (latitude != null && longitude != null) {
-//            location = Location(
-//                latitude.toDouble(),
-//                longitude.toDouble(),
-//                gmtDiff.toDouble(),
-//                0
-//            )
-//        }
-//        val azan = Azan(location, EGYPT_SURVEY)
-//
-//        val prayers = azan.getPrayerTimes(today).times
-
-        val prayers = arrayOf(
-            Time(22, 40, 0, false),
-            Time(22, 41, 0, false),
-            Time(22, 42, 0, false),
-            Time(22, 43, 0, false),
-            Time(22, 44, 0, false),
-            Time(22, 45, 0, false)
+        //get prayer times
+        val mGMTOffset = GregorianCalendar().timeZone.rawOffset
+        val gmtDiff = TimeUnit.HOURS.convert(
+            mGMTOffset.toLong(),
+            TimeUnit.MILLISECONDS
         )
+
+        val today = SimpleDate(GregorianCalendar())
+        val location = Location(
+            latitude,
+            longitude,
+            gmtDiff.toDouble(),
+            0
+        )
+        val azan = Azan(location, EGYPT_SURVEY)
+
+        val prayers = azan.getPrayerTimes(today).times
+
+//        val prayers = arrayOf(
+//            Time(22, 40, 0, false),
+//            Time(22, 41, 0, false),
+//            Time(22, 42, 0, false),
+//            Time(22, 43, 0, false),
+//            Time(22, 44, 0, false),
+//            Time(22, 45, 0, false)
+//        )
 
         //schedule notification
         scheduleNotification(prayers)

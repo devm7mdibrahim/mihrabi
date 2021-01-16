@@ -5,5 +5,5 @@ import com.devm7mdibrahim.mihrabi.utils.DataState
 import kotlinx.coroutines.flow.Flow
 
 interface AzkarRepository {
-    suspend fun fetchAzkar(type: Int): Flow<DataState<List<Azkar>>>
+    suspend fun fetchAzkar(type: Int, list: List<Azkar>): Flow<DataState<List<Azkar>>>
 }
